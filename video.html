@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+    <title>Project 6</title>
+    <meta charset="utf-8">
+    <script>
+    
+    	var video;
+
+		function init() {
+   			video = document.getElementById("video");
+
+    		var playButton = document.getElementById("playButton");
+			playButton.onclick = playVideo;
+			
+			var pauseButton = document.getElementById("pauseButton");
+			pauseButton.onclick = pauseVideo;
+			
+			var shortRewindButton = document.getElementById("shortRewindButton");
+			shortRewindButton.onclick = shortRewindVideo;
+			
+			var rewindButton = document.getElementById("rewindButton");
+			rewindButton.onclick = rewindVideo;
+		}
+		window.onload = init;
+		
+		function playVideo() {
+			video.play();
+		}
+		
+		function pauseVideo() {
+			video.pause();
+		}
+		
+		function shortRewindVideo() {
+     		var now = video.currentTime;
+      		video.currentTime = now-5;
+		}
+		
+		function rewindVideo() {
+      		video.currentTime = 0;
+		}
+
+    </script>
+</head>
+<body>
+    <video id="video" >
+        <source src="demovideo1.ogv">
+        <source src="demovideo1.webm">
+    </video>
+    <br>
+    <input type="button" id="playButton" value="Play">
+    <input type="button" id="pauseButton" value="Pause">
+    <input type="button" id="shortRewindButton" value="Short Rewind">
+    <input type="button" id="rewindButton" value="Rewind">
+</body>
+</html>
